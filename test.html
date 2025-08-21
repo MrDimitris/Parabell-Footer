@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: '#122053',
+                        black: '#000000',
+                        red: '#EC1C24',
+                        gray: 'rgb(179,179,179)',
+                        yellow: '#FCE30C',
+                    },
+                   fontFamily:{
+                        display: ['Roboto', 'sans-serif'],
+                        display2: ['"Marcellus SC"', 'serif']
+                    },  
+                }
+              }
+            }
+    </script>
+    </head>
+  <body class=" mx-auto">
+    <prefooter class="border-b-2 border-[black] bg-[#e5e5e5] 2xl:px-[60px] lg:px-[10px] grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 py-6 2xl:gap-48 lg:gap-10 md:gap-2 gap-12">
+      <div class="flex justify-center md:grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-7 sm:grid-cols-7">
+        <div class="grid">
+          <img src="./images/truck.svg" alt="truck free shipping" width="69px" >
+        </div>
+        <div class="border-l-2 border-[black] grid">
+          <div class=" lg:max-w-[270px] max-w-fit">
+            <p class="2xl:pl-4 pl-2 2xl:text-[22px] lg:text-[18px] md:text-[16px] font-normal font-[display2]">FREE SHIPPING</p>
+          </div>
+          <div class="border-t-2 border-[black] max-w-fit text-nowrap md:grid 2xl:pl-4 pl-2 md:pr-[20px] 2xl:text-lg lg:text-[14px] md:text-[14px] font-normal font-[display]">
+            <p class="md:hidden sm:block lg:block">With orders above $99 for USA and Canada.</p>
+            <p class="hidden md:block lg:hidden">With orders above<br> $99 for USA and Canada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-7 sm:grid-cols-7">
+        <div class="grid">
+          <img src="./images/HELP-CENTER.svg" alt="truck free shipping" width="69px" >
+        </div>
+        <div class="border-l-2 border-[black] grid">
+          <div class="border-b-2 border-[black]">
+            <p class="2xl:pl-4 pl-2 2xl:text-[22px] lg:text-[18px] md:text-[16px] font-normal font-[display2]">HAVE ANY QUESTIONS?</p>
+          </div>
+          <div class="text-nowrap md:grid 2xl:pl-4 pl-2 md:pr-[20px] 2xl:text-lg lg:text-[14px] md:text-[14px] font-normal font-[display]">
+            <p class="md:mr-10 md:hidden sm:block lg:block">(+30) 210 4121876 | 9 - 16hrs EET</p>
+            <p class="md:mr-10 hidden md:block lg:hidden">(+30) 210 4121876 <br> 9 - 16hrs EET</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center md:grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-7 sm:grid-cols-7">
+        <div class="grid">
+          <img src="./images/COMMUNITY-.svg" alt="truck free shipping" width="69px" >
+        </div>
+        <div class="border-l-2 border-[black] grid">
+          <div class="border-b-2 border-[black]">
+            <p class="2xl:pl-4 pl-2 2xl:text-[22px] lg:text-[18px] md:text-[16px] font-normal font-[display2]">FREE SHIPPING</p>
+          </div>
+          <div class="text-nowrap md:grid 2xl:pl-4 pl-2 md:pr-[20px] 2xl:text-lg lg:text-[14px] md:text-[14px] font-normal font-[display]">
+            <p class="md:mr-10 md:hidden sm:block lg:block">JOIN OUR COMMUNITY.</p>
+            <p class="md:mr-10 hidden md:block lg:hidden">Click here to join the Conquest fanbase!</p>
+          </div>
+        </div>
+      </div>   
+    </prefooter> 
+    <!-- Subscibe section -->
+    <div class="border-b-2 border-[black] bg-[white] 2xl:px-[60px] xl:mx-auto lg:px-[60px] md:px-[10px] grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 py-2 2xl:gap-30 xl:gap-20 lg:gap-4 md:gap-6 gap-12">
+      <div class="flex items-center justify-center">
+        <div class="grid lg:flex ">
+            <p class="md:block lg:hidden xl:block 2xl:block 2xl:text-[36px] xl:text-[28px] lg:text-[24px] md:text-[24px] text-nowrap font-normal font-[display2]">SUBSCRIBE TO OUR NEWSLETTER</p>
+            <p class="hidden sm:hidden md:hidden lg:block xl:hidden 2xl:hidden 2xl:text-[30px] xl:text-[28px] lg:text-[22px] md:text-[22px] text-nowrap font-normal font-[display2] text-center">SUBSCRIBE TO <br> OUR NEWSLETTER</p>
+        </div>
+      </div>
+      <div class="md:flex mx-auto">
+        <div class="flex max-w-md p-1 lg:my-4 border-1 border-black rounded-full">
+          <label for="email-address" class="sr-only">Email address</label>
+          <input id="email-address" type="email" name="email" required placeholder="Enter your email" autocomplete="email" class="flex-auto bg-white/5 px-3.5 lg:px-1 py-2 lg:my-2 text-base text-black placeholder:text-gray-500 sm:text-sm/6" />
+          <button type="submit" class="flex-none rounded-full bg-black px-12 lg:px-6 lg:my-2 text-lg font-semibold text-white shadow-xs hover:bg-[blue] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[blue]">Subscribe</button>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="flex items-center space-x-2  sm:max-w-[350px] md:max-w-[350px] mx-auto">
+          <input id="terms" type="checkbox" class="h-5 w-5 md:ml-10 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500"/>
+          <label for="terms" class="text-gray-700 border-l-2 border-black pl-4 md:pl-2 ml-4 md:ml-2 text-sm">I confirm that I have read, understood and I fully accept the <a href="#" class="text-[red]">Privacy Policy</a> and <a href="#" class="text-[red]">Terms and Conditions</a> of Para Bellum Wargames.</label>
+        </div>
+      </div>
+            
+    </div>
+    <footer class="">
+        <div class="grid lg:grid-cols-5 px-[60px] gap-2">
+            <div class="col-span-2 lg:border-r-2 border-[black]">
+                <div class="flex items-center gap-10 my-10">
+                <div><img src="./images/parabellumclean.png" alt="parabellum logo" width="330px"></div>
+                <div class="pr-8"><img src="./images/onquestclean.png" alt="onquest logo" width="320px"></div>
+                </div>
+                <div class="border-t-2 border-[black] py-6 pr-20 font-[display]"><p><strong>Welcome to the Para Bellum Games online shop, home of Conquest!</strong></p>
+                    <p>Conquest is a tabletop game of fantasy of mass and skirmish battles that takes place in Eä. This new strategy battle system provides wargamers and new-to-the-hobby cadets with a fun, easy to play and yet deeply tactical table-top wargame.</p></div>
+            </div>
+            <div class="grid grid-cols-3 col-span-3 xl:grid-cols-3 lg:grid-cols-2 gap-12 ml-8 my-10">
+                <div class="">
+                    <h3 class="text-[22px] font-[display2] border-b-2 border-[black] pb-2">CONQUEST</h3>
+                    <ul class="text-lg font-normal font-[display] mt-6">
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">New & Upcoming</a></li>
+                        <li><a href="#">Start Here</a></li>
+                        <li><a href="#">Factions</a></li>
+                        <li><a href="#">STL Terrain</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="text-[22px] font-[display2] border-b-2 border-[black] pb-2">PARA BELLUM</h3>
+                    <ul class="text-lg font-normal font-[display] mt-6">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookies Policy</a></li>
+                        <li><a href="#">Affiliation Program</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 col-span-1 lg:col-span-2 xl:col-span-1 gap-2 lg:gap-12 xl:gap-2">
+                    <div>
+                        <h3 class="text-[22px] font-[display2] border-b-2 border-[black] pb-2">RELATED SITES</h3>
+                        <ul class="text-lg font-normal font-[display] mt-6">
+                            <li><a href="#">Para Bellum Games LTD</a></li>
+                            <li><a href="#">Retail Support Site</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-[22px] font-[display2] border-b-2 border-[black] pb-2">COMMUNITY</h3>
+                        <ul class="text-lg font-normal font-[display] mt-6">
+                            <li><a href="#">Para Bellum Games LTD</a></li>
+                            <li><a href="#">Retail Support Site</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="py-4 px-[60px] border-t-2 border-[black] grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 gap-4 ">
+            <div class="flex gap-2 items-center sm:justify-center lg:justify-start">
+                <span>FOLLOW US</span>
+                <img src="./images/FB-ICON.svg" alt="" width="30px">
+                <img src="./images/INSTA-ICON.svg" alt="" width="30px">
+                <img src="./images/YOUTUBE-ICON.svg" alt="" width="30px">
+                <img src="./images/PINTEREST-ICON.svg" alt="" width="30px">
+                <img src="./images/DISCORD-ICON.svg" alt="" width="30px">
+            </div>
+            <div class="flex gap-2 items-center sm:justify-center lg:justify-end">
+                <span>
+                    <p><strong>Para Bellum Games Ltd,</strong> 48 Inomenon Ethnon, Guricon House, 2 & 3rd Floor, 6042 Larnaca, Cyprus</p>
+                </span>
+            </div>
+        </div>
+        <div class="py-4 px-[60px] border-t-2 border-[black] grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 gap-4">
+             <div class="text-nowrap flex sm:justify-center text-center lg:justify-start">
+                <span>
+                    <p class="flex items-center">© Para Bellum Games. All Rights Reserved | Powered by :<a href="eshoped.gr" target="_blank"><img class="ml-2 " src="./images/ESHOPED-HOR-LOGO-ORANGE-BLACK.png" width="110px" alt="eshoped logo"></a></p>
+                </span>
+            </div>
+            <div class="flex gap-2 items-center sm:justify-center lg:justify-end">
+                <img src="./images/visa.svg" alt="" width="40px">
+                <img src="./images/mastercard.svg" alt="" width="40px">
+                <img src="./images/paypal.svg" alt="" width="40px">
+                <img src="./images/american-express.svg" alt="" width="40px">
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
