@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: '#122053',
+                        black: '#000000',
+                        red: '#EC1C24',
+                        gray: '#e5e5e5',
+                        yellow: '#FCE30C',
+                    },
+                   fontFamily:{
+                        display: ['Roboto', 'sans-serif'],
+                        display2: ['"Marcellus SC"', 'serif']
+                    },  
+                }
+              }
+            }
+    </script>
+    </head>
+
+<header class="banner">
+  <nav class="">
+<!-- TOPBAR -->
+<div class="bg-[#e5e5e5] border-b border-[#d4d4d4] font-display">
+  <div class="mx-auto mw-full max-w-[1800px] grid grid-cols-3 items-stretch h-12 md:h-10 px-4 text-xs sm:text-sm">
+    
+    <!-- Left: B2B -->
+    <div class="justify-self-start h-full">
+      <a href="#"
+         class="h-full inline-flex items-center gap-1 px-3 bg-black text-white uppercase tracking-wide hover:opacity-90 transition">
+        <strong class="font-semibold">B2B</strong>
+        <span>Login</span>
+      </a>
+    </div>
+ 
+    <!-- Center: Welcome -->
+    <div class="justify-self-center self-center text-center text-black">
+      <span class="font-medium uppercase tracking-wide">
+        WELCOME TO THE OFFICIAL CONQUEST E-SHOP
+      </span>
+    </div>
+ 
+    <!-- Right: Region -->
+    <div class="justify-self-end h-full relative">
+      <label for="region" class="sr-only">Region</label>
+      <select id="region" name="region"
+        class="h-full block border-0 bg-black text-white px-3 pr-7
+               [appearance:none] focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-black/50">
+        <option selected>Europe</option>
+        <option>Americas</option>
+      </select>
+      <svg class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 text-white"
+           viewBox="0 0 20 20" fill="currentColor">
+        <path d="M6 8l4 4 4-4" />
+      </svg>
+    </div>
+ 
+  </div>
+</div>
+  </nav>
+<!-- Topbar -->
+ 
+ 
+<!-- Main Header -->
+<header class="bg-white 2xl:flex">
+  <div class="mx-auto grid grid-cols-3 items-center h-20 px-4 gap-4 2xl:gap-36">
+    <!-- Left: Search (desktop) -->
+    <form action="#" class="hidden md:block">
+      <label class="relative block lg:w-[300px]">
+        <input
+          type="search"
+          placeholder="Search"
+          class="w-full rounded-full border border-black/10 bg-white pl-5 pr-12 py-2 text-sm placeholder-black/50 shadow-sm focus:border-black focus:ring-0"
+        />
+        <button type="submit"
+          class="absolute right-1.5 top-1/2 -translate-y-1/2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black text-white"
+          aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 5.5 5.5a7.5 7.5 0 0 0 11.15 11.15z"/>
+          </svg>
+        </button>
+      </label>
+    </form>
+ 
+    <!-- Center: Logo -->
+    <a href="#" class="justify-seld-start md:justify-self-center col-span-2 md:col-span-1">
+      <!-- Βάλε εδώ το δικό σου SVG/PNG -->
+      <img src="./images/onquestclean.png" alt="Conquest" class="w-[150px] sm:w-[250px] md:w-[200px] lg:w-[300px]">
+    </a>
+ 
+    <!-- Right: Icons / Cart / Currency -->
+    <div class="justify-self-end flex items-center gap-4 md:gap-6">
+      <!-- Account -->
+      <a href="#" class="text-black hover:opacity-70" aria-label="Account">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-7 8a7 7 0 0 1 14 0z"/>
+        </svg>
+      </a>
+ 
+      <!-- Wishlist -->
+      <a href="#" class="text-black hover:opacity-70" aria-label="Wishlist">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21s-6.716-3.978-9.192-7.2C.7 11.2 1.1 7.7 4.3 6.4 6.3 5.5 8.6 6 10 7.6c1.4-1.6 3.7-2.1 5.7-1.2 3.2 1.3 3.6 4.8 1.5 7.4C18.7 17 12 21 12 21z"/>
+        </svg>
+      </a>
+ 
+      <!-- Cart + badge + total -->
+      <a href="#" class="relative flex items-center gap-2 text-black hover:opacity-70" aria-label="Cart">
+        <span class="relative inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 9 18h10v-2H9.42l1-1.8h6.82a1 1 0 0 0 .92-.62L21 7H6.21l-.94-2Zm2 15a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm8 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+          </svg>
+          <!-- badge -->
+          <span class="absolute -right-1.5 -top-1.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-semibold text-white leading-none">
+            1
+          </span>
+        </span>
+        <span class="hidden sm:inline text-sm text-nowrap">18.20 €</span>
+      </a>
+ 
+      <!-- Currency -->
+      <div class="relative">
+        <label for="currency" class="sr-only">Currency</label>
+        <select id="currency" name="currency"
+          class="h-8 pl-2 pr-7 text-sm border-0 bg-transparent focus:outline-none focus:ring-2 focus:ring-black/20 appearance-none">
+          <option selected>EUR</option>
+          <option>USD</option>
+          <option>GBP</option>
+        </select>
+        <svg class="pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M6 8l4 4 4-4"/>
+        </svg>
+      </div>
+      <div class="">
+        <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 7L4 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M20 12L4 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M20 17L4 17" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  
+  
+ 
+  <!-- Mobile search (προαιρετικό) -->
+  <div class="px-4 pb-3 md:hidden">
+    <label class="relative block">
+      <input
+        type="search"
+        placeholder="Search"
+        class="w-full rounded-full border border-black/10 bg-white pl-5 pr-12 py-2 text-sm placeholder-black/50 shadow-sm focus:border-black focus:ring-0"
+      />
+      <button type="submit"
+        class="absolute right-1 top-1/2 -translate-y-1/2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black text-white"
+        aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 5.5 5.5a7.5 7.5 0 0 0 11.15 11.15z"/>
+        </svg>
+      </button>
+    </label>
+  </div>
+</header>
+<body>
+    <div class="h-fit bg-cover bg-center bg-[url('/images/MENU.png')] grid grid-cols-1">
+        <!-- <div>1</div> -->
+        <div class="col-span-4 hidden md:flex justify-center md:gap-4 lg:gap-12">
+            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')]">
+                <div class="flex justify-center items-center min-h-full text-center">
+                    <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">News & Upcoming</a></p>
+                </div>
+            </div>
+            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/START_HERE.png')]">
+                <div class="flex justify-center items-center min-h-full text-center">
+                    <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Start Here</a></p>
+                </div>
+            </div>
+            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/FACTIONS.png')]">
+                <div class="flex justify-center items-center min-h-full text-center">
+                    <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Factions</a></p>
+                </div>
+            </div>
+            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/STL_TERRAIN.png')]">
+                <div class="flex justify-center items-center min-h-full text-center">
+                    <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">STL Terrain</a></p>
+                </div>
+            </div>
+            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/ACCESSORIES.png')]">
+                <div class="flex justify-center items-center min-h-full text-center">
+                    <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Accessories<br> & Merchandise</a></p>
+                </div>
+            </div>
+        <!-- <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div> -->
+        <!-- <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')]"></div>
+        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/START_HERE.png')]"></div>
+        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/FACTIONS.png')]"></div>
+        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/STL_TERRAIN.png')]"></div>
+        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/ACCESSORIES.png')]"></div>
+        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')]"></div> -->
+        <!-- <div><img src="./images/START_HERE.png" alt=""></div>
+        <div><img src="./images/FACTIONS.png" alt=""></div>
+        <div><img src="./images/STL_TERRAIN.png" alt=""></div>
+        <div><img src="./images/ACCESSORIES.png" alt=""></div> -->
+  </div>
+</body>
