@@ -6,7 +6,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -27,126 +28,415 @@
             }
     </script>
     </head>
-  <body class=" mx-auto">
 
-    <prefooter class="border-b-2 border-[black] bg-[#e5e5e5] 2xl:px-[60px] lg:px-[10px] grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 py-6 2xl:gap-48 lg:gap-10 md:gap-2 gap-12">
-      <div class="flex justify-center md:grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-7 sm:grid-cols-7">
-        <div class="grid">
-          <img src="./images/truck.svg" alt="truck free shipping" width="69px" >
-        </div>
-        <div class="border-l-2 border-[black] grid">
-          <div class=" lg:max-w-[270px] max-w-fit">
-            <p class="2xl:pl-4 lg:pl-2 2xl:text-[22px] lg:text-[18px] md:text-[16px] font-normal font-[display2]">FREE SHIPPING</p>
-          </div>
-          <div class="border-t-2 border-[black] max-w-fit text-nowrap md:grid 2xl:pl-4 lg:pl-2 md:pr-[20px] 2xl:text-lg lg:text-[14px] md:text-[14px] font-normal font-[display]">
-            <p class="md:hidden sm:block lg:block">With orders above $99 for USA and Canada.</p>
-            <p class="hidden md:block lg:hidden">With orders above<br> $99 for USA and Canada.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex justify-center md:grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-7 sm:grid-cols-7">
-        <div class="grid">
-          <img src="./images/HELP-CENTER.svg" alt="truck free shipping" width="69px" >
-        </div>
-        <div class="border-l-2 border-[black] grid">
-          <div class="border-b-2 border-[black]">
-            <p class="2xl:pl-4 lg:pl-2 2xl:text-[22px] lg:text-[18px] md:text-[16px] font-normal font-[display2]">HAVE ANY QUESTIONS?</p>
-          </div>
-          <div class="text-nowrap md:grid 2xl:pl-4 lg:pl-2 md:pr-[20px] 2xl:text-lg lg:text-[14px] md:text-[14px] font-normal font-[display]">
-            <p class="md:mr-10 md:hidden sm:block lg:block">(+30) 210 4121876 | 9 - 16hrs EET</p>
-            <p class="md:mr-10 hidden md:block lg:hidden">(+30) 210 4121876 <br> 9 - 16hrs EET</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex justify-center md:grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-7 sm:grid-cols-7">
-        <div class="grid">
-          <img src="./images/COMMUNITY-.svg" alt="truck free shipping" width="69px" >
-        </div>
-        <div class="border-l-2 border-[black] grid">
-          <div class="border-b-2 border-[black]">
-            <p class="2xl:pl-4 lg:pl-2 2xl:text-[22px] lg:text-[18px] md:text-[16px] font-normal font-[display2]">FREE SHIPPING</p>
-          </div>
-          <div class="text-nowrap md:grid 2xl:pl-4 lg:pl-2 md:pr-[20px] 2xl:text-lg lg:text-[14px] md:text-[14px] font-normal font-[display]">
-            <p class="md:mr-10 md:hidden sm:block lg:block">JOIN OUR COMMUNITY.</p>
-            <p class="md:mr-10 hidden md:block lg:hidden">Click here to join the Conquest fanbase!</p>
-          </div>
-        </div>
-      </div>   
-    </prefooter> 
-
-    <!-- Subscibe section -->
-    <div class="border-b-2 border-[black] bg-[white] 2xl:px-[60px] xl:mx-auto lg:px-[60px] md:px-[10px] grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 py-2 2xl:gap-30 xl:gap-20 lg:gap-4 md:gap-6 gap-12">
-      <div class="flex items-center justify-center">
-        <div class="grid lg:flex ">
-            <p class="md:block lg:hidden xl:block 2xl:block 2xl:text-[36px] xl:text-[28px] lg:text-[24px] md:text-[24px] text-nowrap font-normal font-[display2]">SUBSCRIBE TO OUR NEWSLETTER</p>
-            <p class="hidden sm:hidden md:hidden lg:block xl:hidden 2xl:hidden 2xl:text-[30px] xl:text-[28px] lg:text-[22px] md:text-[22px] text-nowrap font-normal font-[display2] text-center">SUBSCRIBE TO <br> OUR NEWSLETTER</p>
-        </div>
-      </div>
-      <div class="md:flex mx-auto">
-        <div class="flex max-w-md p-1 lg:my-4 border-1 border-black rounded-full">
-          <label for="email-address" class="sr-only">Email address</label>
-          <input id="email-address" type="email" name="email" required placeholder="Enter your email" autocomplete="email" class="flex-auto bg-white/5 px-3.5 lg:px-1 py-2 lg:my-2 text-base text-black placeholder:text-gray-500 sm:text-sm/6" />
-          <button type="submit" class="flex-none rounded-full bg-black px-12 lg:px-6 lg:my-2 text-lg font-semibold text-white shadow-xs hover:bg-[blue] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[blue]">Subscribe</button>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="flex items-center space-x-2  sm:max-w-[350px] md:max-w-[350px] mx-auto">
-          <input id="terms" type="checkbox" class="h-5 w-5 md:ml-10 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500"/>
-          <label for="terms" class="text-gray-700 border-l-2 border-black pl-4 md:pl-2 ml-4 md:ml-2 text-sm">I confirm that I have read, understood and I fully accept the <a href="#" class="text-[red]">Privacy Policy</a> and <a href="#" class="text-[red]">Terms and Conditions</a> of Para Bellum Wargames.</label>
-        </div>
-      </div>
-            
+<header class="banner">
+  <nav class="">
+<!-- TOPBAR -->
+<div class="bg-[#e5e5e5] border-b border-[#d4d4d4] font-display">
+  <div class="mx-auto mw-full max-w-[1800px] grid grid-cols-3 items-stretch h-12 md:h-10 px-4 text-xs sm:text-sm">
+    
+    <!-- Left: B2B -->
+    <div class="justify-self-start h-full">
+      <a href="#"
+         class="h-full inline-flex items-center gap-1 px-3 bg-black text-white uppercase tracking-wide hover:opacity-90 transition">
+        <strong class="font-semibold">B2B</strong>
+        <span>Login</span>
+      </a>
     </div>
-    <footer class="sm:bg-[#e5e5e5] md:bg-[red] lg:bg-[yellow] xl:bg-[blue] 2xl:bg-[#e5e5e5]">
-        <div class="grid lg:grid-cols-5 px-[60px] gap-2">
-            <div class="col-span-2 lg:border-r-2 border-[black]">
-                <div class="flex items-center gap-10 my-10">
-                <div><img src="./parabellumclean.png" alt="parabellum logo" width="330px"></div>
-                <div class="pr-8"><img src="./onquestclean.png" alt="onquest logo" width="320px"></div>
-                </div>
-                <div class="border-t-2 border-[black] py-6 pr-20 font-[display]"><p><strong>Welcome to the Para Bellum Games online shop, home of Conquest!</strong></p>
-                    <p>Conquest is a tabletop game of fantasy of mass and skirmish battles that takes place in Eä. This new strategy battle system provides wargamers and new-to-the-hobby cadets with a fun, easy to play and yet deeply tactical table-top wargame.</p></div>
+ 
+    <!-- Center: Welcome -->
+    <div class="justify-self-center self-center text-center text-black">
+      <span class="font-medium uppercase tracking-wide">
+        WELCOME TO THE OFFICIAL CONQUEST E-SHOP
+      </span>
+    </div>
+ 
+    <!-- Right: Region -->
+    <div class="justify-self-end h-full relative">
+      <label for="region" class="sr-only">Region</label>
+      <select id="region" name="region"
+        class="h-full block border-0 bg-black text-white px-3 pr-7
+               [appearance:none] focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-black/50">
+        <option selected>Europe</option>
+        <option>Americas</option>
+      </select>
+      <svg class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 text-white"
+           viewBox="0 0 20 20" fill="currentColor">
+        <path d="M6 8l4 4 4-4" />
+      </svg>
+    </div>
+ 
+  </div>
+</div>
+  </nav>
+<!-- Topbar -->
+ 
+ 
+<!-- Main Header -->
+<header class="bg-white 2xl:flex py-3">
+  <div class="mx-auto grid grid-cols-3 items-center h-20 px-4 gap-4 2xl:gap-36">
+    <!-- Left: Search (desktop) -->
+    <form action="#" class="hidden md:block">
+      <label class="relative block lg:w-[300px]">
+        <input
+          type="search"
+          placeholder="Search"
+          class="w-full rounded-full border border-black/10 bg-white pl-5 pr-12 py-2 text-sm placeholder-black/50 shadow-sm focus:border-black focus:ring-0"
+        />
+        <button type="submit"
+          class="absolute right-1.5 top-1/2 -translate-y-1/2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black text-white"
+          aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 5.5 5.5a7.5 7.5 0 0 0 11.15 11.15z"/>
+          </svg>
+        </button>
+      </label>
+    </form>
+ 
+    <!-- Center: Logo -->
+    <a href="#" class="justify-seld-start md:justify-self-center col-span-2 md:col-span-1">
+      <!-- Βάλε εδώ το δικό σου SVG/PNG -->
+      <img src="./images/onquestclean.png" alt="Conquest" class="w-[150px] sm:w-[250px] md:w-[200px] lg:w-[300px]">
+    </a>
+ 
+    <!-- Right: Icons / Cart / Currency -->
+    <div class="justify-self-end flex items-center gap-4 md:gap-6">
+      <!-- Account -->
+      <a href="#" class="text-black hover:opacity-70" aria-label="Account">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-7 8a7 7 0 0 1 14 0z"/>
+        </svg>
+      </a>
+ 
+      <!-- Wishlist -->
+      <a href="#" class="text-black hover:opacity-70" aria-label="Wishlist">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21s-6.716-3.978-9.192-7.2C.7 11.2 1.1 7.7 4.3 6.4 6.3 5.5 8.6 6 10 7.6c1.4-1.6 3.7-2.1 5.7-1.2 3.2 1.3 3.6 4.8 1.5 7.4C18.7 17 12 21 12 21z"/>
+        </svg>
+      </a>
+ 
+      <!-- Cart + badge + total -->
+      <a href="#" class="relative flex items-center gap-2 text-black hover:opacity-70" aria-label="Cart">
+        <span class="relative inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 9 18h10v-2H9.42l1-1.8h6.82a1 1 0 0 0 .92-.62L21 7H6.21l-.94-2Zm2 15a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm8 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+          </svg>
+          <!-- badge -->
+          <span class="absolute -right-1.5 -top-1.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-semibold text-white leading-none">
+            1
+          </span>
+        </span>
+        <span class="hidden sm:inline text-sm text-nowrap">18.20 €</span>
+      </a>
+ 
+      <!-- Currency -->
+      <div class="relative">
+        <label for="currency" class="sr-only">Currency</label>
+        <select id="currency" name="currency"
+          class="h-8 pl-2 pr-7 text-sm border-0 bg-transparent focus:outline-none focus:ring-2 focus:ring-black/20 appearance-none">
+          <option selected>EUR</option>
+          <option>USD</option>
+          <option>GBP</option>
+        </select>
+        <svg class="pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M6 8l4 4 4-4"/>
+        </svg>
+      </div>
+      <!--Dimitris Mobile menu start -->
+      <div x-data="{ open: false }" class="relative md:hidden">
+        <button @click="open = true"  class="focus:outline-none grid justify center align-right gap-2 mt-6 mr-2">
+          <span class="h-0.5 w-8 rounded-lg bg-black"></span>
+          <span class="h-0.5 w-8 rounded-lg bg-black"></span>
+          <span class="h-0.5 w-8 rounded-lg bg-black"></span> 
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform translate-x-full" x-transition:enter-end="transform translate-x-0" x-transition:leave="transition ease-in duration-600" x-transition:leave-start="transform translate-x-0" x-transition:leave-end="transform translate-x-full" class="fixed inset-y-0 right-0 w-84 bg-cover bg-[url('/images/firebg.png')] text-white shadow-lg z-50">
+          <div class="flex items-center justify-between py-7 px-6 ">
+            <img class="bg-white" src="./images/parabellumclean.png" width="200px" alt="">
+            <img src="./image/nav-logo.png" alt="">
+            <button @click="open= false" class="focus:outline-none transition-transform duration-900" :class="open ? 'rotate-360' : 'rotate-0'"> <img src="./images/arrows1.png" alt=""> </button>
+          </div>
+          <ul class="flex flex-col w-full">
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>NEW & UPCOMING</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-md">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Pre-Orders</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">New Releases</a>
+              </div>
             </div>
-            <div class="grid grid-cols-3 col-span-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 ml-8">
-                <div class="">2</div>
-                <div class="">3</div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 grid-cols-span-1 lg:grid-cols-span-2 xl:grid-cols-span-1">
-                    <div>5</div>
-                    <div>6</div>
-                </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>START HERE</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">The Last Arguments Of Kings</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">First Blood</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">2000 Pt. Armies</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Lore Campaigns</a>
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>FACTIONS</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Hundred Kingdoms</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Spires</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Dweghom</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Nords</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">W'adrhun</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Old Dominion</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">City States</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Sorcerer Kings</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Yoroni</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Weaver COurts</a>
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>STL TERRAIN</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 1</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 2</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 3</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 4</a>
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>ACCESSORIES & MERCHANDISE</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Accessories</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Books</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Apparel</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Art Prints</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Gift Cards</a>
+              </div>
+            </div>
+          </ul>
+          <div class="flex ml-4 mt-10">
+            <a target="_blank" href="#"><img src="./images/gplay.png" alt=""></a>
+            <a target="_blank" href="#"><img src="./images/appleplay.png" alt=""></a>
+          </div>
+          <div class="flex gap-2 items-center justify-evenly h-[40px] bg-[white] mt-6">
+                <a href="#" target="_blank"><img src="./images/FB-ICON.svg" alt="fb icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/INSTA-ICON.svg" alt="insta icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/YOUTUBE-ICON.svg" alt="youtube icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/PINTEREST-ICON.svg" alt="pinterest icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/DISCORD-ICON.svg" alt="discord icon" width="30px"></a>
             </div>
         </div>
-        <div class="py-4 px-[60px] border-t-2 border-[black] grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 gap-4 ">
-            <div class="flex gap-2 items-center sm:justify-center lg:justify-start">
-                <span>FOLLOW US</span>
-                <img src="./FB-ICON.svg" alt="" width="30px">
-                <img src="./INSTA-ICON.svg" alt="" width="30px">
-                <img src="./YOUTUBE-ICON.svg" alt="" width="30px">
-                <img src="./PINTEREST-ICON.svg" alt="" width="30px">
-                <img src="./DISCORD-ICON.svg" alt="" width="30px">
-            </div>
-            <div class="flex gap-2 items-center sm:justify-center lg:justify-end">
-                <span>
-                    <p><strong>Para Bellum Games Ltd,</strong> 48 Inomenon Ethnon, Guricon House, 2 & 3rd Floor, 6042 Larnaca, Cyprus</p>
-                </span>
-            </div>
+        <div x-show="open" @click="open = false" x-transition:enter="transition-opacity ease-linear duration-600" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0" ></div>
+      </div> 
+      <!--Dimitris Mobile menu end-->
+      
+    </div>
+  </div>
+  
+  
+ 
+  <!-- Mobile search (προαιρετικό) -->
+  <div class="px-4 pb-3 md:hidden">
+    <label class="relative block">
+      <input
+        type="search"
+        placeholder="Search"
+        class="w-full rounded-full border border-black/10 bg-white pl-5 pr-12 py-2 text-sm placeholder-black/50 shadow-sm focus:border-black focus:ring-0"
+      />
+      <button type="submit"
+        class="absolute right-1 top-1/2 -translate-y-1/2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black text-white"
+        aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 5.5 5.5a7.5 7.5 0 0 0 11.15 11.15z"/>
+        </svg>
+      </button>
+    </label>
+  </div>
+</header>
+<body>
+      <!--Dimitris Desktop menu start-->
+    <!-- <div class="h-fit bg-cover bg-center bg-[url('/images/MENU.png')] grid grid-cols-1">
+      <div class="col-span-4 hidden md:flex justify-center md:gap-4 lg:gap-12">
+          <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')]">
+              <div class="flex justify-center items-center min-h-full text-center">
+                  <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">News & Upcoming</a></p>
+              </div>
+          </div>
+          <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/START_HERE.png')]">
+              <div class="flex justify-center items-center min-h-full text-center">
+                  <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Start Here</a></p>
+              </div>
+          </div>
+          <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/FACTIONS.png')]">
+              <div class="flex justify-center items-center min-h-full text-center">
+                  <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Factions</a></p>
+              </div>
+          </div>
+          <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/STL_TERRAIN.png')]">
+              <div class="flex justify-center items-center min-h-full text-center">
+                  <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">STL Terrain</a></p>
+              </div>
+          </div>
+          <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/ACCESSORIES.png')]">
+              <div class="flex justify-center items-center min-h-full text-center">
+                  <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Accessories<br> & Merchandise</a></p>
+              </div>
         </div>
-        <div class="py-4 px-[60px] border-t-2 border-[black] grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1 gap-4 w-fit">
-             <div class="text-nowrap flex justify-center text-center lg:justify-start w-[90]">
-                <span>
-                    <p class="flex items-center">© Para Bellum Games. All Rights Reserved | Powered by :<a href="eshoped.gr" target="_blank"><img class="ml-2 object-contain" src="./ESHOPED-HOR-LOGO-ORANGE-BLACK.png" width="110px" alt="eshoped logo"></a></p>
-                </span>
-            </div>
-            <div class="flex gap-2 items-center sm:justify-center lg:justify-end">
-                <img src="./visa.svg" alt="" width="40px">
-                <img src="./mastercard.svg" alt="" width="40px">
-                <img src="./paypal.svg" alt="" width="40px">
-                <img src="./american-express.svg" alt="" width="40px">
-            </div>
+      </div>
+    </div> -->
+    <div class="h-fit bg-cover bg-center bg-[url('/images/MENU.png')] hidden md:grid grid-cols-1">
+    <div class="col-span-4 flex justify-center md:gap-4 lg:gap-12">
+
+    <!-- NEW & UPCOMING -->
+    <div x-data="{ open: false }" class="relative group">
+      <div>
+
+        
+      </div>
+      <div 
+        @mouseenter="open = true" 
+        @mouseleave="open = false" 
+        class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] 
+               md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] 
+               bg-center bg-cover bg-[url('/images/NEW.png')] cursor-pointer"
+      >
+        <div class="flex justify-center items-center min-h-full text-center">
+          <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] 
+                    bg-cover bg-center bg-[url('/images/PLATE.png')] 
+                    text-black md:text-[14px] lg:text-[14px]">
+            <a href="#">News & Upcoming</a>
+          </p>
         </div>
-    </footer>
-   
-  </body>
-</html>
+      </div>
+
+      <!-- Dropdown -->
+      <div 
+        x-show="open" 
+        x-transition 
+        class="absolute left-0 top-full bg-white shadow-lg rounded-lg p-4 space-y-2 z-50"
+      >
+        <a href="#" class="block text-black hover:text-gray-600">Pre-Orders</a>
+        <a href="#" class="block text-black hover:text-gray-600">New Releases</a>
+      </div>
+    </div>
+
+    <!-- START HERE -->
+    <div x-data="{ open: false }" class="relative group">
+      <div 
+        @mouseenter="open = true" 
+        @mouseleave="open = false" 
+        class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] 
+               md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] 
+               bg-center bg-cover bg-[url('/images/START_HERE.png')] cursor-pointer"
+      >
+        <div class="flex justify-center items-center min-h-full text-center">
+          <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] 
+                    bg-cover bg-center bg-[url('/images/PLATE.png')] 
+                    text-black md:text-[14px] lg:text-[14px]">
+            <a href="#">Start Here</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Dropdown -->
+      <div 
+        x-show="open" 
+        x-transition 
+        class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50"
+      >
+        <a href="#" class="block text-black hover:text-gray-600">The Last Arguments Of Kings</a>
+        <a href="#" class="block text-black hover:text-gray-600">First Blood</a>
+        <a href="#" class="block text-black hover:text-gray-600">2000 Pt. Armies</a>
+        <a href="#" class="block text-black hover:text-gray-600">Lore Campaigns</a>
+      </div>
+    </div>
+
+    <!-- FACTIONS -->
+    <div x-data="{ open: false }" class="relative group">
+      <div 
+        @mouseenter="open = true" 
+        @mouseleave="open = false" 
+        class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] 
+               md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] 
+               bg-center bg-cover bg-[url('/images/FACTIONS.png')] cursor-pointer"
+      >
+        <div class="flex justify-center items-center min-h-full text-center">
+          <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] 
+                    bg-cover bg-center bg-[url('/images/PLATE.png')] 
+                    text-black md:text-[14px] lg:text-[14px]">
+            <a href="#">Factions</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Dropdown -->
+      <div 
+        x-show="open" 
+        x-transition 
+        class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50 max-h-60 overflow-y-auto"
+      >
+        <a href="#" class="block text-black hover:text-gray-600">Hundred Kingdoms</a>
+        <a href="#" class="block text-black hover:text-gray-600">Spires</a>
+        <a href="#" class="block text-black hover:text-gray-600">Dweghom</a>
+        <a href="#" class="block text-black hover:text-gray-600">Nords</a>
+        <a href="#" class="block text-black hover:text-gray-600">W'adrhun</a>
+        <a href="#" class="block text-black hover:text-gray-600">Old Dominion</a>
+        <a href="#" class="block text-black hover:text-gray-600">City States</a>
+        <a href="#" class="block text-black hover:text-gray-600">Sorcerer Kings</a>
+        <a href="#" class="block text-black hover:text-gray-600">Yoroni</a>
+        <a href="#" class="block text-black hover:text-gray-600">Weaver Courts</a>
+      </div>
+    </div>
+
+    <!-- STL TERRAIN -->
+    <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] 
+                md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] 
+                bg-center bg-cover bg-[url('/images/STL_TERRAIN.png')] cursor-pointer">
+      <div class="flex justify-center items-center min-h-full text-center">
+        <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] 
+                  bg-cover bg-center bg-[url('/images/PLATE.png')] 
+                  text-black md:text-[14px] lg:text-[14px]">
+          <a href="#">STL Terrain</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- ACCESSORIES -->
+    <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] 
+                md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] 
+                bg-center bg-cover bg-[url('/images/ACCESSORIES.png')] cursor-pointer">
+      <div class="flex justify-center items-center min-h-full text-center">
+        <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] 
+                  bg-cover bg-center bg-[url('/images/PLATE.png')] 
+                  text-black md:text-[14px] lg:text-[14px]">
+          <a href="#">Accessories<br>& Merchandise</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--Dimitris Desktop menu end-->
+
+
+</body>

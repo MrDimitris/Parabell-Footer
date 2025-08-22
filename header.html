@@ -6,7 +6,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -72,7 +73,7 @@
  
  
 <!-- Main Header -->
-<header class="bg-white 2xl:flex">
+<header class="bg-white 2xl:flex py-3">
   <div class="mx-auto grid grid-cols-3 items-center h-20 px-4 gap-4 2xl:gap-36">
     <!-- Left: Search (desktop) -->
     <form action="#" class="hidden md:block">
@@ -142,13 +143,112 @@
           <path d="M6 8l4 4 4-4"/>
         </svg>
       </div>
-      <div class="">
-        <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 7L4 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M20 12L4 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M20 17L4 17" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
+      <!--Dimitris Mobile menu start -->
+      <div x-data="{ open: false }" class="relative md:hidden">
+        <button @click="open = true"  class="focus:outline-none grid justify center align-right gap-2 mt-6 mr-2">
+          <span class="h-0.5 w-8 rounded-lg bg-black"></span>
+          <span class="h-0.5 w-8 rounded-lg bg-black"></span>
+          <span class="h-0.5 w-8 rounded-lg bg-black"></span> 
+        </button>
+        <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="transform translate-x-full" x-transition:enter-end="transform translate-x-0" x-transition:leave="transition ease-in duration-600" x-transition:leave-start="transform translate-x-0" x-transition:leave-end="transform translate-x-full" class="fixed inset-y-0 right-0 w-84 bg-cover bg-[url('/images/firebg.png')] text-white shadow-lg z-50">
+          <div class="flex items-center justify-between py-7 px-6 ">
+            <img class="bg-white" src="./images/parabellumclean.png" width="200px" alt="">
+            <img src="./image/nav-logo.png" alt="">
+            <button @click="open= false" class="focus:outline-none transition-transform duration-900" :class="open ? 'rotate-360' : 'rotate-0'"> <img src="./images/arrows1.png" alt=""> </button>
+          </div>
+          <ul class="flex flex-col w-full">
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>NEW & UPCOMING</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-md">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Pre-Orders</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">New Releases</a>
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>START HERE</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">The Last Arguments Of Kings</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">First Blood</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">2000 Pt. Armies</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Lore Campaigns</a>
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>FACTIONS</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Hundred Kingdoms</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Spires</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Dweghom</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Nords</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">W'adrhun</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Old Dominion</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">City States</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Sorcerer Kings</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Yoroni</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Weaver COurts</a>
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>STL TERRAIN</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 1</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 2</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 3</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Submenu 4</a>
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="border-b border-gray-700 pb-2">
+              <button @click="open = !open" class="flex justify-between w-full items-center focus:outline-none py-2.5 pl-6 pr-6 flex items-center">
+                <span>ACCESSORIES & MERCHANDISE</span>
+                <svg :class="open ? 'rotate-90' : 'rotate-0'" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <div x-show="open" x-transition class="mt-2 pl-4 space-y-1 text-sm">
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Accessories</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Books</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Apparel</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Art Prints</a>
+                <a href="#" class="block py-2.5 pl-6 flex items-center">Gift Cards</a>
+              </div>
+            </div>
+          </ul>
+          <div class="flex ml-4 mt-10">
+            <a target="_blank" href="#"><img src="./images/gplay.png" alt=""></a>
+            <a target="_blank" href="#"><img src="./images/appleplay.png" alt=""></a>
+          </div>
+          <div class="flex gap-2 items-center justify-evenly h-[40px] bg-[white] mt-6">
+                <a href="#" target="_blank"><img src="./images/FB-ICON.svg" alt="fb icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/INSTA-ICON.svg" alt="insta icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/YOUTUBE-ICON.svg" alt="youtube icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/PINTEREST-ICON.svg" alt="pinterest icon" width="30px"></a>
+                <a href="#" target="_blank"><img src="./images/DISCORD-ICON.svg" alt="discord icon" width="30px"></a>
+            </div>
+        </div>
+        <div x-show="open" @click="open = false" x-transition:enter="transition-opacity ease-linear duration-600" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0" ></div>
+      </div> 
+      <!--Dimitris Mobile menu end-->
+      
     </div>
   </div>
   
@@ -174,47 +274,92 @@
   </div>
 </header>
 <body>
-    <div class="h-fit bg-cover bg-center bg-[url('/images/MENU.png')] grid grid-cols-1">
-        <!-- <div>1</div> -->
-        <div class="col-span-4 hidden md:flex justify-center md:gap-4 lg:gap-12">
-            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')]">
-                <div class="flex justify-center items-center min-h-full text-center">
-                    <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">News & Upcoming</a></p>
-                </div>
-            </div>
-            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/START_HERE.png')]">
-                <div class="flex justify-center items-center min-h-full text-center">
-                    <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Start Here</a></p>
-                </div>
-            </div>
-            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/FACTIONS.png')]">
-                <div class="flex justify-center items-center min-h-full text-center">
-                    <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Factions</a></p>
-                </div>
-            </div>
-            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/STL_TERRAIN.png')]">
-                <div class="flex justify-center items-center min-h-full text-center">
-                    <p class="mt-16 md:px-1 md:py-4 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">STL Terrain</a></p>
-                </div>
-            </div>
-            <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/ACCESSORIES.png')]">
-                <div class="flex justify-center items-center min-h-full text-center">
-                    <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]"><a href="#">Accessories<br> & Merchandise</a></p>
-                </div>
-            </div>
-        <!-- <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div> -->
-        <!-- <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')]"></div>
-        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/START_HERE.png')]"></div>
-        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/FACTIONS.png')]"></div>
-        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/STL_TERRAIN.png')]"></div>
-        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/ACCESSORIES.png')]"></div>
-        <div class="h-[194px] w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')]"></div> -->
-        <!-- <div><img src="./images/START_HERE.png" alt=""></div>
-        <div><img src="./images/FACTIONS.png" alt=""></div>
-        <div><img src="./images/STL_TERRAIN.png" alt=""></div>
-        <div><img src="./images/ACCESSORIES.png" alt=""></div> -->
+  <!--Dimitris Desktop menu start-->
+  <div class="h-fit bg-cover bg-center bg-[url('/images/MENU.png')] hidden md:grid grid-cols-1">
+    <div class="col-span-4 flex justify-center md:gap-4 lg:gap-12">
+      <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/NEW.png')] cursor-pointer">
+          <div class="flex justify-center items-center min-h-full text-center">
+            <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]">
+              <a href="#">News & Upcoming</a>
+            </p>
+          </div>
+        </div>
+        <div x-show="open" x-transition class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
+          <a href="#" class="block text-black hover:text-gray-600">Pre-Orders</a>
+          <a href="#" class="block text-black hover:text-gray-600">New Releases</a>
+        </div>
+      </div>
+      <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/START_HERE.png')] cursor-pointer">
+          <div class="flex justify-center items-center min-h-full text-center">
+            <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]">
+              <a href="#">Start Here</a>
+            </p>
+          </div>
+        </div>
+        <div x-show="open" x-transition class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
+          <a href="#" class="block text-black hover:text-gray-600">The Last Arguments Of Kings</a>
+          <a href="#" class="block text-black hover:text-gray-600">First Blood</a>
+          <a href="#" class="block text-black hover:text-gray-600">2000 Pt. Armies</a>
+          <a href="#" class="block text-black hover:text-gray-600">Lore Campaigns</a>
+        </div>
+      </div>
+      <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/FACTIONS.png')] cursor-pointer">
+          <div class="flex justify-center items-center min-h-full text-center">
+            <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]">
+              <a href="#">Factions</a>
+            </p>
+          </div>
+        </div>
+        <div x-show="open" x-transition class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
+          <a href="#" class="block text-black hover:text-gray-600">Hundred Kingdoms</a>
+          <a href="#" class="block text-black hover:text-gray-600">Spires</a>
+          <a href="#" class="block text-black hover:text-gray-600">Dweghom</a>
+          <a href="#" class="block text-black hover:text-gray-600">Nords</a>
+          <a href="#" class="block text-black hover:text-gray-600">W'adrhun</a>
+          <a href="#" class="block text-black hover:text-gray-600">Old Dominion</a>
+          <a href="#" class="block text-black hover:text-gray-600">City States</a>
+          <a href="#" class="block text-black hover:text-gray-600">Sorcerer Kings</a>
+          <a href="#" class="block text-black hover:text-gray-600">Yoroni</a>
+          <a href="#" class="block text-black hover:text-gray-600">Weaver Courts</a>
+        </div>
+      </div>
+      <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/STL_TERRAIN.png')] cursor-pointer">
+          <div class="flex justify-center items-center min-h-full text-center">
+            <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]">
+              <a href="#">STL Terrain</a>
+            </p>
+          </div>
+        </div>
+        <div x-show="open" x-transition class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
+          <a href="#" class="block text-black hover:text-gray-600">Submenu 1</a>
+          <a href="#" class="block text-black hover:text-gray-600">Submenu 2</a>
+          <a href="#" class="block text-black hover:text-gray-600">Submenu 3</a>
+          <a href="#" class="block text-black hover:text-gray-600">Submenu 4</a>
+        </div>
+      </div>
+      <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
+        <div class="md:h-[120px] lg:h-[150px] xl:h-[150px] 2xl:h-[194px] md:w-[120px] lg:w-[150px] xl:w-[150px] 2xl:w-[194px] bg-center bg-cover bg-[url('/images/ACCESSORIES.png')] cursor-pointer">
+          <div class="flex justify-center items-center min-h-full text-center">
+            <p class="mt-16 md:px-1 md:py-2 lg:w-[180px] bg-cover bg-center bg-[url('/images/PLATE.png')] text-black md:text-[14px] lg:text-[14px]">
+              <a href="#">STL Terrain</a>
+            </p>
+          </div>
+        </div>
+        <div x-show="open" x-transition class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
+          <a href="#" class="block text-black hover:text-gray-600">Accessories</a>
+          <a href="#" class="block text-black hover:text-gray-600">Books</a>
+          <a href="#" class="block text-black hover:text-gray-600">Apparel</a>
+          <a href="#" class="block text-black hover:text-gray-600">Art Prints</a>
+          <a href="#" class="block text-black hover:text-gray-600">Gift Cards</a>
+        </div>
+      </div>
+    </div>
   </div>
+<!--Dimitris Desktop menu end-->
+
+
 </body>
